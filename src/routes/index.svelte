@@ -3,14 +3,7 @@
 </svelte:head>
 <script>
     import {getRustNews, getRPNews, getRPVIPS } from '$lib/data/index/cardData.js';
-    
     let vips =  getRPVIPS();
-    import Modal from '$lib/components/calendarmodal.svelte'  ;
-    let showModal = false  ;
-    const handleToggleModal = () => {
-    showModal = !showModal
-  }
-   
 </script>
 
 <div class=" bg-gray-700 bg-opacity-70  rounded-lg overflow-hidden mb-6">
@@ -52,13 +45,6 @@
                     {/await}
                 </div>
             </div>
-            <div class="px-6 py-4">
-                <h3 class="font-bold ">Events</h3>
-                <div class="flex justify-center mt-6">
-                    <button on:click={() => handleToggleModal()}>Open modal</button>
-                        
-                </div>
-            </div>
         </div>
     <div class=" bg-gray-700 bg-opacity-50  rounded-lg overflow-hidden">
         <div class="bg-gray-500 text-white text-md font-bold px-6 py-2">Recent VIP Purchases</div>
@@ -72,6 +58,3 @@
         </div>
     </div>
 </div>
-
-<Modal title="Edit your details" open={showModal} on:close={() => handleToggleModal()}>
-</Modal>

@@ -12,6 +12,10 @@
             "URL":"/servers"
         },
         {
+            "Page":"Events",
+            "URL":"/events"
+        },
+        {
             "Page":"Shop",
             "URL":"/shop"
         },
