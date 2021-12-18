@@ -44,7 +44,7 @@ export async function getRPEvents(){
   return news;
 }
 
-export function getRPVIPS(){
+export async function getRPVIPS(){
   let vips = [
     {user:"Tofu"},
     {user:"RenewedPath"},
