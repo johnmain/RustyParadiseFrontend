@@ -44,7 +44,7 @@
                 <!-- Primary Navbar items -->
                 <div class="hidden md:flex items-center space-x-1">
                     { #each pageNav as  navitem}
-                    <a href="{navitem.URL}" class="py-4 px-2 text-gray-200 font-semibold hover:text-green-500 transition duration-300" class:active={$page.path == navitem.URL} on:click={() => { hidden = true }}>{navitem.Page}</a>
+                    <a href="{navitem.URL}" class="py-4 px-2 text-gray-200 font-semibold hover:text-green-500 transition duration-300" class:active={$page.path.split('/')[1] == navitem.URL.split('/')[1]} on:click={() => { hidden = true }}>{navitem.Page}</a>
                     {/each}
                     
                 </div>
@@ -77,7 +77,7 @@
     <div class=" mobile-menu">
         <ul class="">
             { #each pageNav as  navitem}
-            <li><a href="{navitem.URL}" class="block text-sm px-2 py-4 font-semibold transition duration-300 text-gray-200" class:active-mobile={$page.path == navitem.URL} on:click={() => { hidden = true }}>{navitem.Page}</a></li>
+            <li><a href="{navitem.URL}" class="block text-sm px-2 py-4 font-semibold transition duration-300 text-gray-200" class:active-mobile={$page.path.split('/')[1] == navitem.URL.split('/')[1]} on:click={() => { hidden = true }}>{navitem.Page}</a></li>
             {/each}
         </ul>
     </div>
