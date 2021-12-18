@@ -1,5 +1,4 @@
 <script>
-    import postcss from "postcss";
     export let data;
     export let title;
 </script>

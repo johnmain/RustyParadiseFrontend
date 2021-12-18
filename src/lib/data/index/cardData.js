@@ -1,3 +1,4 @@
+import { marked } from "marked";
 export async function getRustNews(){
   let data;
   const response = await fetch(import.meta.env.VITE_ENDPOINT_URL +'home/getRustNews');
@@ -21,7 +22,7 @@ export async function getRPNews(){
     return{
       category: data.attributes.category.data.name,
       title: data.attributes.title,
-      post: data.attributes.post,
+      post: marked.parse(data.attributes.post),
       createdAt: new Date(data.attributes.createdAt).toLocaleString()
     }
   });
