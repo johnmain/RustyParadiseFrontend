@@ -8,6 +8,7 @@ export async function getRustNews(){
       category: '',
       title: data.title,
       post: data.description,
+      link: data.link,
       createdAt: new Date(data.pubDate.split(',')[1].substring(0, data.pubDate.split(',')[1].length - 1)).toLocaleString()
     }
   });
