@@ -19,12 +19,13 @@ export async function getRPNews(){
   let data;
   const response = await fetch(import.meta.env.VITE_ENDPOINT_URL +'home/getRPNews');
   data = await response.json();
-  const news = data.data.map((data) =>{
+  console.log(data);
+  const news = data.map((data) =>{
     return{
-      category: data.attributes.category.data.name,
-      title: data.attributes.title,
-      post: marked.parse(data.attributes.post),
-      createdAt: new Date(data.attributes.createdAt).toLocaleString()
+      category: data.category.name,
+      title: data.title,
+      post: marked.parse(data.post),
+      createdAt: new Date(data.created_at).toLocaleString()
     }
   });
   
