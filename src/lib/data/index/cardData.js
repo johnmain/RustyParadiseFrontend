@@ -19,7 +19,6 @@ export async function getRPNews(){
   let data;
   const response = await fetch(import.meta.env.VITE_ENDPOINT_URL +'home/getRPNews');
   data = await response.json();
-  console.log(data);
   const news = data.map((data) =>{
     return{
       category: data.category.name,
